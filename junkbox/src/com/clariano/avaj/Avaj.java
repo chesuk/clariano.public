@@ -1,4 +1,7 @@
 package com.clariano.avaj;
+
+import java.io.File;
+
 /**
  *  Copyright 2012 Phil Spencer
  *
@@ -16,8 +19,8 @@ package com.clariano.avaj;
  */
 
 public class Avaj {
-	public Avaj() {
-		ByteStreamStructureLearner bsl = new ByteStreamStructureLearner();
+	public Avaj(String classFilePath) {
+		ByteStreamStructureLearner bsl = new ByteStreamStructureLearner(new File(classFilePath));
 		bsl.learn();
 	}
 
@@ -25,7 +28,18 @@ public class Avaj {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Avaj();
+		if (args.length!=0) {
+			for (int ix = 0; ix < args.length; ix++) {
+				new Avaj(args[ix]);
+			}
+		} else {
+			usage();
+		}
+	}
+
+	private static void usage() {
+		System.err.println("Usage:");
+		System.err.println("\tAVaj <class file list>");
 	}
 
 }

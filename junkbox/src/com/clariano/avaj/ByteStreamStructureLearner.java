@@ -1,4 +1,7 @@
 package com.clariano.avaj;
+
+import java.io.File;
+
 /**
  *  Copyright 2012 Phil Spencer
  *
@@ -16,6 +19,9 @@ package com.clariano.avaj;
  */
 
 public class ByteStreamStructureLearner {
+	public ByteStreamStructureLearner(File classFile) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public void learn() {
 		// TODO Auto-generated method stub
