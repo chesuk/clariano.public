@@ -33,8 +33,9 @@ public class ByteStreamStructureLearner {
 	}
 
 	public void learn() {
-		// TODO Auto-generated method stub
-		
+		for (int ix = 0; ix < bytes.length; ix++) {
+			System.err.println("bytes[" + ix + "] = " + bytes[ix]);
+		}
 	}
 
 }
