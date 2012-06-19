@@ -23,18 +23,24 @@ import org.apache.commons.io.FileUtils;
 
 public class ByteStreamStructureLearner {
 	private final byte[] bytes;
+	private final File classfile;
 
 	public ByteStreamStructureLearner(File classFile) {
+		this.classfile = classFile;
 		try {
-			bytes = FileUtils.readFileToByteArray(classFile);
+			bytes = FileUtils.readFileToByteArray(this.classfile);
 		} catch (IOException ex) {
 			throw new RuntimeException(ex);
 		}
 	}
 
+	
 	public void learn() {
-		for (int ix = 0; ix < bytes.length; ix++) {
-			System.err.println("bytes[" + ix + "] = " + bytes[ix]);
+		// Check for the CAFEBABE magic number
+		if ((bytes[0]&0xFF)==0xCA && (bytes[1]&0xFF)==0xFE && (bytes[2]&0xFF)==0xBA && (bytes[3]&0xFF)==0xBE) {
+			System.err.println(this.classfile.getAbsolutePath()+ " is a Java class file");
+		} else {
+			System.err.println(this.classfile.getAbsolutePath()+ " is not a Java class file");
 		}
 	}
 
