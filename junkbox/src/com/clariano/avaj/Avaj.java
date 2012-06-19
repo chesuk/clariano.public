@@ -1,7 +1,3 @@
-package com.clariano.avaj;
-
-import java.io.File;
-
 /**
  *  Copyright 2012 Phil Spencer
  *
@@ -17,6 +13,10 @@ import java.io.File;
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
+package com.clariano.avaj;
+
+import java.io.File;
 
 public class Avaj {
 	public Avaj(String classFilePath) {

@@ -1,7 +1,3 @@
-package com.clariano.avaj;
-
-import java.io.File;
-
 /**
  *  Copyright 2012 Phil Spencer
  *
@@ -18,9 +14,22 @@ import java.io.File;
  *  limitations under the License.
  */
 
+package com.clariano.avaj;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+
 public class ByteStreamStructureLearner {
+	private final byte[] bytes;
+
 	public ByteStreamStructureLearner(File classFile) {
-		// TODO Auto-generated constructor stub
+		try {
+			bytes = FileUtils.readFileToByteArray(classFile);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
 	}
 
 	public void learn() {
