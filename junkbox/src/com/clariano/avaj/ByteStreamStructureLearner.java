@@ -15,17 +15,11 @@ package com.clariano.avaj;
  *  limitations under the License.
  */
 
-public class Avaj {
-	public Avaj() {
-		ByteStreamStructureLearner bsl = new ByteStreamStructureLearner();
-		bsl.learn();
-	}
+public class ByteStreamStructureLearner {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		new Avaj();
+	public void learn() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
