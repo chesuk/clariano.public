@@ -38,8 +38,10 @@ public class Avaj {
 	}
 
 	private static void usage() {
+		// I hate Java static methods
+		// TODO: make this an instance method (with all its crappy consequences) or determine class from stack (effing ugly)
 		System.err.println("Usage:");
-		System.err.println("\tAVaj <class file list>");
+		System.err.println("\tAvaj <class file list>");
 	}
 
 }
